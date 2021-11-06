@@ -1,0 +1,8 @@
+# A ConfigMap is an API object used to store non-confidential data in key-value pairs. Pods can consume ConfigMaps as environment variables, command-line arguments, or as configuration files in a volume.
+## A ConfigMap allows you to decouple environment-specific configuration from your container images, so that your applications are easily portable.
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mongodb-configmap
+data:
+   database_url: mongodb-service
