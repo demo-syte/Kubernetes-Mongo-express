@@ -83,8 +83,6 @@ Getting Started
 
     
 
-  password: $(echo -n "s33msi4" | base64 -w0)
-  username: $(echo -n "jane" | base64 -w0)
-EOF
+ 
 
 
