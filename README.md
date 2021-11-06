@@ -16,6 +16,7 @@ Kubernetes$ # minikube service mongo-express-service
 |-----------|-----------------------|-------------|-----------------------------|
 🎉  Opening service default/mongo-express-service in default browser...
 
+![mongo-expres service](https://user-images.githubusercontent.com/78690371/140602832-dc2f35f4-aaf0-4c4b-92b5-f6cce3b391e3.png)
 
 
 # Prerequisite
