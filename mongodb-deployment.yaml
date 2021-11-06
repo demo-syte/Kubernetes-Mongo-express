@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongodb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mongodb
+  template:
+    metadata:
+      labels:
+        app: mongodb
+    spec:
+      containers:
+      - name: mongodb
+        image: mongo
+        ports:
+         - containerPort: 27017
+        env:
+          - name: MONGO_INITDB_ROOT_USERNAME
+            valueFrom:
+             secretKeyRef:
+                  name: mongodb-secret
+                  key: MONGO-ROOT-USERNAME
+          - name: MONGO_INITDB_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                    name: mongodb-secret
+                    key: MONGO-ROOT-PASSWORD
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: mongo
+  name: mongodb-service
+spec:
+  ports:
+  - port: 27017 # service Port which is exposed to outside
+    protocol: TCP
+    targetPort: 27017 # Container Port of deployement which will be bind with Service Port and they can be different
+  selector:
+    app: mongodb
+  
