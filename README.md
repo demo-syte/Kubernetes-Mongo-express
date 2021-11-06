@@ -1,7 +1,7 @@
-# Kubernetes-Mongo-express
+# Kubernetes-Mongo-express setup
 A simple Mongo-express Set-up on your local cluster - minikube
 
-# Final Config looks like below -
+Final Config looks like below -
 
 Kubernetes$ # kubectl get service
 NAME                    TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
